@@ -3,6 +3,7 @@
 const char* ssid = "........";
 const char* password = "........";
 const char* server = "........";
+const char* url = "/sensors/.......";
 const char* useragent = "........";
 
 WiFiClient client;
@@ -12,8 +13,8 @@ WiFiClient client;
 void httpRequest()
 {
   if (client.connect(server, 80)) {
-    client.println("GET " + "/" + " HTTP/1.1");
-    client.println("Host: " + WiFi.localIP());
+    client.println("GET " + url + " HTTP/1.1");
+    client.println("Host: " + server);
     client.println("User-Agent: " + useragent);
     client.println("Connection: close");
     client.println();
