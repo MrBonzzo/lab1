@@ -12,7 +12,8 @@ WiFiClient client;
 void httpRequest()
 {
   if (client.connect(host, 80)) {
-    client.println("GET " + url + " HTTP/1.1");
+    client.println("GET " + "/" + " HTTP/1.1");
+    client.println("Host: " + WiFi.localIP());
     client.println("User-Agent: " + useragent);
     client.println("Connection: close");
     client.println();
