@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log</title>
+    <style>
+        #main{
+            max-width: 95%;
+            margin: 60px auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .item{
+            box-shadow: 0 0 10px #a1a1a1;
+            min-width: 25%;
+            padding: 20px;
+            position: relative;
+            color: white;
+        }
+        .item h2{
+            position: absolute;
+            top: -40px;
+            background-color: #12d9f3;
+            text-align: center;
+            min-width: 50%;
+            padding: 10px;
+        }
+        .item ul{
+            background-color: #ff7e03;
+            padding: 20px 50px;
+            border-radius: 10px;
+        }
+        .item ul>li{
+            padding: 10px 0;
+        }
+        .item ul>li span{
+            font-weight: bold;
+        }
+        .item ul>li span:before{
+            content: "";
+            display: inline-block;
+            background-color: red;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            border: 1px #740402 solid;
+            margin-bottom: -5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id = "main">
+        <div class="item">
+            <h2>Sensors</h2>
+            <div class="content">
+                <ul>
+                    {% for sens in sensors %}
+                    <li><span>{{ sens[0] }}</span> {{ sens[1] }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
