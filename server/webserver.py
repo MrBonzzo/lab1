@@ -10,7 +10,7 @@ def index():
     return render_template("index.html", sensors=sensors)
 
 @app.route("/sensors/<sensor>")
-def catch():
+def catch(sensor):
 	if request.headers.get('User-Agent') == sensor:
 		who = sensor
 		time = str(now.hour) + ':' + str(now.minute) + ':' + str(now.second)
