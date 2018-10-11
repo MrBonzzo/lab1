@@ -13,6 +13,7 @@ def index():
 def catch(sensor):
 	if request.headers.get('User-Agent') == sensor:
 		who = sensor
+		now = datetime.now()
 		time = str(now.hour) + ':' + str(now.minute) + ':' + str(now.second)
 		sensors.append([who, time])
 	return ''
