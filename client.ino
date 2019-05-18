@@ -10,7 +10,7 @@ const char* ssid = "........";
 const char* password = ".......";
 
 volatile int sys_status = 0; // 0 - регестрирует срабатывания; 1 - сработал; -1 - не регестрирует срабатывания
-volatile int val = 0;
+volatile int val = 0; // just because i can
 
 ESP8266WebServer server(80);
 
